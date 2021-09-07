@@ -13,9 +13,8 @@ h1 {
   margin-bottom: 0;
 }
 .overview ul {
-  margin: -30px;
+  margin: 0px;
   padding: 0;
-  background-color: aquamarine;
 }
 .overview li {
   list-style: none;
