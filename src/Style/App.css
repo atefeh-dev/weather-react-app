@@ -11,19 +11,3 @@
   border: 1px solid #dadde1;
   border-radius: 10px;
 }
-@media (max-width: 576px) {
-  .container-fluid {
-    max-width: 400px;
-    padding: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-}
-@media (max-width: 730px) {
-  .container-fluid {
-    width: 490px;
-    padding: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
