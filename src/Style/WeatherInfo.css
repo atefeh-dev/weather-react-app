@@ -1,0 +1,80 @@
+/** @format */
+
+.overview {
+  margin-bottom: 20px;
+  margin-left: 5px;
+  color: rgb(135, 135, 135);
+}
+h1 {
+  color: #878787;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+ul {
+  margin: -30px;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 22px;
+}
+.col-6 ul {
+  margin-top: 1px;
+  margin-left: 5px;
+}
+.col-6 li {
+  line-height: 22px;
+}
+
+.Weather .weather-temperature canvas {
+  margin: 10px auto;
+}
+.float-left {
+  float: left;
+}
+.weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 400;
+  margin-left: 15px;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -24px;
+  margin-left: 4px;
+}
+.weather-temperature .units a {
+  text-decoration: none;
+}
+.weather-temperature .units a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 576px) {
+  .weather-temperature strong {
+    font-size: 25px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 576px) {
+  .weather-temperature .units {
+    position: relative;
+    font-size: 12px;
+    top: -10px;
+    margin-left: 4px;
+  }
+}
+@media (max-width: 576px) {
+  .Weather .weather-temperature canvas {
+    margin-right: 5px;
+    height: 34px;
+    width: 34px;
+  }
+}

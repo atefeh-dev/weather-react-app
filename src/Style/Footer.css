@@ -1,0 +1,21 @@
+/** @format */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #878787;
+  margin-top: 1px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 576px) {
+  .footer {
+    text-align: center;
+    font-size: 10px;
+    margin: 2px 2px;
+  }
+}
