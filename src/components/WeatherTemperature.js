@@ -26,13 +26,13 @@ const WeatherTemperature = ({ temp }) => {
       <span className="units ml-1">
         <a
           href="/"
-          className={unit == "celsius" ? "disabled" : ""}
+          className={unit == "celsius" ? "disabled" : " "}
           onClick={celsiusOnClickHandle}>
           °C |{" "}
         </a>
         <a
           href="/"
-          className={unit == "Fahrenheit" ? "disabled" : ""}
+          className={unit == "Fahrenheit" ? "disabled" : " "}
           onClick={FahrenheitOnClickHandle}>
           °F
         </a>
