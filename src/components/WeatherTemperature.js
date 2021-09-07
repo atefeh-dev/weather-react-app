@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import "../Style/WeatherTemperature.css";
 const WeatherTemperature = ({ temp }) => {
   const [unit, setUnit] = useState("celsius");
   const [temperature, setTemperature] = useState(temp);
@@ -23,10 +24,16 @@ const WeatherTemperature = ({ temp }) => {
     <div>
       <strong>{Math.round(temperature)}</strong>
       <span className="units ml-1">
-        <a href="/" onClick={celsiusOnClickHandle}>
+        <a
+          href="/"
+          className={unit == "celsius" ? "disabled" : ""}
+          onClick={celsiusOnClickHandle}>
           °C |{" "}
         </a>
-        <a href="/" onClick={FahrenheitOnClickHandle}>
+        <a
+          href="/"
+          className={unit == "Fahrenheit" ? "disabled" : ""}
+          onClick={FahrenheitOnClickHandle}>
           °F
         </a>
       </span>

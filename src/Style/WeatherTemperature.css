@@ -1,0 +1,6 @@
+/** @format */
+
+a.disabled {
+  pointer-events: none;
+  color: rgb(109, 106, 106);
+}

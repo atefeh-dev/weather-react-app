@@ -57,13 +57,13 @@ h1 {
 .weather-temperature .units a:hover {
   text-decoration: underline;
 }
-@media (max-width: 576px) {
+@media (max-width: 756px) {
   .weather-temperature strong {
     font-size: 25px;
     font-weight: 400;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 756px) {
   .weather-temperature .units {
     position: relative;
     font-size: 12px;
@@ -71,7 +71,7 @@ h1 {
     margin-left: 4px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 756px) {
   .Weather .weather-temperature canvas {
     margin-right: 5px;
     height: 34px;
