@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import weatherApi from "../Apis/weatherApi";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import WeatherForecast from "./WeatherForecast";
 import Footer from "./Footer";
 
 import "../Style/Search.css";
@@ -34,7 +35,7 @@ const Search = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [term]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [term, searchWeather]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleResponse = (response) => {
     setWeatherData({
@@ -82,6 +83,7 @@ const Search = () => {
             </div>
           </form>
           <WeatherInfo data={weatherData} />
+          <WeatherForecast coord={weatherData.coordinates} />
         </div>
         <Footer />
       </div>
