@@ -1,13 +1,1 @@
 /** @format */
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-.container-fluid {
-  max-width: 680px;
-  margin: 10px auto;
-  padding: 25px;
-  border: 1px solid #dadde1;
-  border-radius: 10px;
-}

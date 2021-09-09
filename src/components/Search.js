@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import weatherApi from "../Apis/weatherApi";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import Footer from "./Footer";
 
 import "../Style/Search.css";
 import WeatherInfo from "./WeatherInfo";
@@ -57,39 +58,47 @@ const Search = () => {
   if (weatherData.ready) {
     return (
       <div>
-        <form className="mb-3" onSubmit={onFormSubmit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="type a city ..."
-                autoFocus="on"
-                onChange={(e) => setTerm(e.target.value) && e.preventDefault()}
-              />
+        <div className="container-fluid border mt-5">
+          <form className="mb-3" onSubmit={onFormSubmit}>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  className="form-control"
+                  placeholder="type a city ..."
+                  autoFocus="on"
+                  onChange={(e) =>
+                    setTerm(e.target.value) && e.preventDefault()
+                  }
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  className="btn btn-primary w-100 "
+                  value="Search"
+                />
+              </div>
             </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                className="btn btn-primary w-100 "
-                value="Search"
-              />
-            </div>
-          </div>
-        </form>
-        <WeatherInfo data={weatherData} />
+          </form>
+          <WeatherInfo data={weatherData} />
+        </div>
+        <Footer />
       </div>
     );
   } else {
     searchWeather();
     return (
-      <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={3000} //3 secs
-      />
+      <div id="loader">
+        <Loader
+          id="loader"
+          type="Puff"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          timeout={3000} //3 secs
+        />
+      </div>
     );
   }
 };
