@@ -4,7 +4,6 @@ import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 const WeatherIcon = ({ code, size }) => {
-  console.log(code, size);
   const codeMapping = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
@@ -25,7 +24,6 @@ const WeatherIcon = ({ code, size }) => {
     "50d": "FOG",
     "50n": "FOG",
   };
-  console.log(codeMapping[code]);
   return (
     <ReactAnimatedWeather
       icon={codeMapping[code]}

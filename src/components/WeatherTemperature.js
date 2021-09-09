@@ -1,10 +1,14 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Style/WeatherTemperature.css";
 const WeatherTemperature = ({ temp }) => {
   const [unit, setUnit] = useState("celsius");
   const [temperature, setTemperature] = useState(temp);
+
+  useEffect(() => {
+    setTemperature(temp);
+  }, [temp]);
 
   const Fahrenheit = () => {
     return (temp * 9) / 5 + 32;
@@ -26,13 +30,13 @@ const WeatherTemperature = ({ temp }) => {
       <span className="units ml-1">
         <a
           href="/"
-          className={unit == "celsius" ? "disabled" : " "}
+          className={unit === "celsius" ? "disabled" : " "}
           onClick={celsiusOnClickHandle}>
           °C |{" "}
         </a>
         <a
           href="/"
-          className={unit == "Fahrenheit" ? "disabled" : " "}
+          className={unit === "Fahrenheit" ? "disabled" : " "}
           onClick={FahrenheitOnClickHandle}>
           °F
         </a>

@@ -23,7 +23,7 @@ const WeatherInfo = ({ data }) => {
             <div>
               {" "}
               <div className="float-left">
-                <WeatherIcon code={data.icon} size={48} />
+                <WeatherIcon code={data.icon} size={50} />
               </div>
             </div>
             <div></div>

@@ -12,18 +12,6 @@ const Search = () => {
   const [term, setTerm] = useState("paris");
   const [weatherData, setWeatherData] = useState({ ready: false });
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        searchWeather();
-      }
-    }, 1000);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [term]);
-
   const searchWeather = async () => {
     await weatherApi
       .get("/weather", {
@@ -35,6 +23,17 @@ const Search = () => {
         handleResponse(res.data);
       });
   };
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        searchWeather();
+      }
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [term]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleResponse = (response) => {
     setWeatherData({
