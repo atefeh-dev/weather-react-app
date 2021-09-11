@@ -15,7 +15,6 @@ const WeatherForecastDay = ({ data }) => {
   };
 
   function day() {
-    console.log(data.dt);
     let date = new Date(data.dt * 1000);
     let day = date.getDay();
 

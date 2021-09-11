@@ -1,7 +1,12 @@
 /** @format */
-import React from "react";
+import React, { StrictMode } from "react";
 import reactDom from "react-dom";
 
 import App from "./App";
 
-reactDom.render(<App />, document.querySelector("#root"));
+reactDom.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.querySelector("#root")
+);

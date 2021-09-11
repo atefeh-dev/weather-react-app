@@ -2,7 +2,7 @@
 
 import axios from "axios";
 let baseURL = "https://api.openweathermap.org/data/2.5";
-let apiKey = "a2e6113ea75155225ff8f0f04ddc7b8f";
+let apiKey = "9a0dbd34d408afc39cd18f58e015864d";
 
 export default axios.create({
   baseURL,

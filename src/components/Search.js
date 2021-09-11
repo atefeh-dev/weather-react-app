@@ -12,6 +12,7 @@ import WeatherInfo from "./WeatherInfo";
 
 const Search = () => {
   const [term, setTerm] = useState("paris");
+  const [tempCity, setTempCity] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   const searchWeather = async () => {
@@ -23,19 +24,9 @@ const Search = () => {
       })
       .then((res) => {
         handleResponse(res.data);
-      });
+      })
+      .catch((e) => console.log("city not existed"));
   };
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        searchWeather();
-      }
-    }, 1000);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [term, searchWeather]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleResponse = (response) => {
     setWeatherData({
@@ -53,6 +44,7 @@ const Search = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    setTerm(tempCity);
     searchWeather();
   };
 
@@ -69,7 +61,7 @@ const Search = () => {
                   placeholder="type a city ..."
                   autoFocus="on"
                   onChange={(e) =>
-                    setTerm(e.target.value) && e.preventDefault()
+                    setTempCity(e.target.value) && e.preventDefault()
                   }
                 />
               </div>

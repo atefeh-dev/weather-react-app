@@ -14,11 +14,6 @@ const WeatherForecast = ({ coord }) => {
     setLoaded(true);
   };
 
-  useEffect(() => {
-    searchForecast();
-    setLoaded(false);
-  }, [coord]);
-
   const searchForecast = async () => {
     await weatherApi
       .get("/onecall", {
@@ -29,8 +24,14 @@ const WeatherForecast = ({ coord }) => {
       })
       .then((res) => {
         handleResponse(res);
-      });
+      })
+      .catch("sorry try later");
   };
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [coord]);
+
   if (loaded) {
     return (
       <div className="WeatherForecast">
@@ -50,9 +51,7 @@ const WeatherForecast = ({ coord }) => {
       </div>
     );
   } else {
-    console.log("HI");
     searchForecast();
-
     return null;
   }
 };
