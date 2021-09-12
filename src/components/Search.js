@@ -12,7 +12,6 @@ import WeatherInfo from "./WeatherInfo";
 
 const Search = () => {
   const [term, setTerm] = useState("paris");
-  const [tempCity, setTempCity] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   const searchWeather = async () => {
@@ -44,7 +43,6 @@ const Search = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    setTerm(tempCity);
     searchWeather();
   };
 
@@ -61,7 +59,7 @@ const Search = () => {
                   placeholder="type a city ..."
                   autoFocus="on"
                   onChange={(e) =>
-                    setTempCity(e.target.value) && e.preventDefault()
+                    setTerm(e.target.value) && e.preventDefault()
                   }
                 />
               </div>
